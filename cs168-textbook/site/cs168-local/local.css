@@ -1,0 +1,67 @@
+html[data-cs168-localizing="pending"] #site-nav,
+html[data-cs168-localizing="pending"] .main-content,
+html[data-cs168-localizing="pending"] .breadcrumb-nav,
+html[data-cs168-localizing="pending"] .content-nav {
+  visibility: hidden;
+}
+
+.cs168-local-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.75rem 0 0;
+}
+
+.aux-nav-list-item.cs168-local-controls-item {
+  align-items: center;
+  display: flex;
+}
+
+.aux-nav-list-item .cs168-local-controls {
+  margin: 0;
+}
+
+.cs168-local-button {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--body-background-color);
+  color: var(--body-text-color);
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.1;
+  min-height: 2rem;
+  padding: 0.35rem 0.55rem;
+  white-space: nowrap;
+}
+
+html:not([data-cs168-localizing="fallback"])[data-lang-mode="zh"] [data-cs168-mode="zh"],
+html:not([data-cs168-localizing="fallback"])[data-lang-mode="en"] [data-cs168-mode="en"],
+html:not([data-cs168-localizing="fallback"])[data-lang-mode="both"] [data-cs168-mode="both"],
+.cs168-local-button.active,
+.cs168-local-button:hover {
+  background: var(--link-color, transparent);
+  color: var(--body-text-color);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.cs168-i18n-line {
+  display: block;
+}
+
+.cs168-i18n-zh {
+  margin-top: 0.4rem;
+}
+
+h1 .cs168-i18n-zh,
+h2 .cs168-i18n-zh,
+h3 .cs168-i18n-zh {
+  font-size: 0.78em;
+}
+
+.cs168-i18n-missing {
+  border-left: 4px solid var(--link-color);
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+}
