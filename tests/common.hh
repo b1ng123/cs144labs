@@ -85,7 +85,7 @@ class Timeout
 public:
   Timeout();
   ~Timeout();
-  
+
   Timeout( const Timeout& other ) = delete;
   Timeout( Timeout&& other ) = delete;
   Timeout& operator=( const Timeout& other ) = delete;

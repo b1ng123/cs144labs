@@ -102,7 +102,7 @@ Timeout::Timer::Timer()
 Timeout::Timer::~Timer()
 {
   static constexpr itimerval disable { .it_interval = { 0, 0 }, .it_value = { 0, 0 } };
-    try {
+  try {
     CheckSystemCall( "setitimer", setitimer( ITIMER_PROF, &disable, nullptr ) );
   } catch ( const exception& e ) {
     cerr << "Exception:" << e.what() << "\n";
@@ -120,8 +120,7 @@ void throw_timeout( int signal_number )
 
 Timeout::Timeout()
 {
-  struct sigaction action 
-  {};
+  struct sigaction action {};
   action.sa_handler = throw_timeout;
   CheckSystemCall( "sigaction", sigaction( SIGPROF, &action, nullptr ) );
 }
